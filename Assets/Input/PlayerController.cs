@@ -68,7 +68,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""1D Axis"",
                     ""id"": ""7dc4156e-3c41-4da8-a7fc-505743056ce0"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -101,7 +101,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""1D Axis"",
                     ""id"": ""0a7b0fad-05ae-486e-a924-0dee1317003f"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""path"": ""1DAxis(whichSideWins=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -134,7 +134,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""1D Axis"",
                     ""id"": ""73cf0a9c-a6b3-43ff-89af-5ca6fac42ce2"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""path"": ""1DAxis(whichSideWins=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
