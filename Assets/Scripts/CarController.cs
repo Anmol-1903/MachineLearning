@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class CarController : MonoBehaviour
 {
     [SerializeField] float _topSpeed = 50f;
@@ -25,7 +26,8 @@ public class CarController : MonoBehaviour
 
     PlayerController playerController;
     Rigidbody rb;
-    float dotProduct, _vertical;
+    float dotProduct, _vertical, _horizontal;
+    bool handbraking;
 
     private void Awake()
     {
@@ -55,23 +57,27 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
         CarDrive();
+        CarSteer();
         UpdateWheelPos(_fl, _flT);
         UpdateWheelPos(_fr, _frT);
         UpdateWheelPos(_rl, _rlT);
         UpdateWheelPos(_rr, _rrT);
+        GamepadManager.Instance.SetTriggerValue(_vertical);
+        GamepadManager.Instance.SetStickValue(_horizontal);
+        GamepadManager.Instance.SetButtonValue(handbraking);
     }
     void CarDrive()
     {
         Vector3 carVelocity = rb.velocity;
         dotProduct = Vector3.Dot(transform.forward, carVelocity);
-        if ((_vertical < 0 && dotProduct > 0.1f) || (_vertical > 0 && dotProduct < -0.1f))
+        if ((_vertical < 0 && dotProduct > 0.1f) || (_vertical > 0 && dotProduct < -0.1f))      //ABS braking
         {
             _fl.brakeTorque = _brakingForce;
             _fr.brakeTorque = _brakingForce;
             _rl.brakeTorque = _brakingForce;
             _rr.brakeTorque = _brakingForce;
         }
-        else
+        else if(!handbraking)
         {
             _fl.brakeTorque = 0;
             _fr.brakeTorque = 0;
@@ -93,6 +99,12 @@ public class CarController : MonoBehaviour
         }
     }
 
+    void CarSteer()
+    {
+        _fl.steerAngle = _horizontal * _maxSteerAngle;
+        _fr.steerAngle = _horizontal * _maxSteerAngle;
+    }
+
     void UpdateWheelPos(WheelCollider c, Transform w)
     {
         c.GetWorldPose(out Vector3 pos, out Quaternion rot);
@@ -102,35 +114,31 @@ public class CarController : MonoBehaviour
 
     private void Handbrake_canceled(InputAction.CallbackContext obj)
     {
+        handbraking = false;
         _rl.brakeTorque = 0;
         _rr.brakeTorque = 0;
     }
 
     private void Steer_canceled(InputAction.CallbackContext obj)
     {
-        _fl.steerAngle = 0;
-        _fr.steerAngle = 0;
+        _horizontal = 0;
     }
 
     private void Accelarate_canceled(InputAction.CallbackContext obj)
     {
-        _fl.motorTorque = 0;
-        _fr.motorTorque = 0;
-        _rl.motorTorque = 0;
-        _rr.motorTorque = 0;
+        _vertical = 0;
     }
 
     private void Handbrake_performed(InputAction.CallbackContext obj)
     {
-        _rl.brakeTorque = _brakingForce;
-        _rr.brakeTorque = _brakingForce;
+        handbraking = true;
+        _rl.brakeTorque = Mathf.Infinity;
+        _rr.brakeTorque = Mathf.Infinity;
     }
 
     private void Steer_performed(InputAction.CallbackContext obj)
     {
-        float _horizontal = obj.ReadValue<float>();
-        _fl.steerAngle = _horizontal * _maxSteerAngle;
-        _fr.steerAngle = _horizontal * _maxSteerAngle;
+        _horizontal = obj.ReadValue<float>();
     }
 
     private void Accelarate_performed(InputAction.CallbackContext obj)

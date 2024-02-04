@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2350689021380916556}
   - component: {fileID: 3968359595042993160}
   - component: {fileID: 1860006127920802900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wipers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6633640246313798309}
   - component: {fileID: 6692909465770088923}
   - component: {fileID: 8241030954554550513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: exhaust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6211951910739718408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5047430228179476807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 2587872963969317977}
   - component: {fileID: 6183654704204781451}
   - component: {fileID: 363848245545454145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8747387692567122610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 4577855714803611869}
   - component: {fileID: 7995981896340551109}
   - component: {fileID: 1166207542791482332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MUSTANG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3059368086523844060}
   serializedVersion: 4
-  m_Mass: 1500
+  m_Mass: 2000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -412,7 +412,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba48ab19948a0d439a4e56afeb9d862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _topSpeed: 100
+  _topSpeed: 80
   _maxSteerAngle: 30
-  _torque: 1000
+  _torque: 750
   _brakingForce: 1000
   _fl: {fileID: 75303676902404015}
   _fr: {fileID: 6746702806499270342}
@@ -464,7 +464,7 @@ MonoBehaviour:
   _frT: {fileID: 2837254160384115426}
   _rlT: {fileID: 5047430228179476807}
   _rrT: {fileID: 4482098571488871984}
-  _front: 0
+  _front: 1
   _rear: 1
 --- !u!1 &3735689875587058714
 GameObject:
@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236083714974191805}
   - component: {fileID: 6746702806499270342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000007078083, y: -0.0000000033609564, z: 6.7536674e-14,
     w: 1}
-  m_LocalPosition: {x: 1.2824907, y: 0.32352367, z: -0.7367517}
+  m_LocalPosition: {x: 1.2824907, y: 0.32352367, z: -0.7067517}
   m_LocalScale: {x: 0.2411178, y: 0.2411178, z: 0.24827927}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -507,13 +507,13 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3735689875587058714}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.45, z: 0}
   m_Radius: 1.25
   m_SuspensionSpring:
-    spring: 30000
-    damper: 1500
+    spring: 35000
+    damper: 2500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 1.25
   m_ForceAppPointDistance: 0
   m_Mass: 300
   m_WheelDampingRate: 1
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 170581995066980848}
   - component: {fileID: 2739429875175564978}
   - component: {fileID: 7384106902991650781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3572454994368184225}
   - component: {fileID: 75303676902404015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000007078083, y: -0.0000000033609564, z: 6.7536674e-14,
     w: 1}
-  m_LocalPosition: {x: 1.2824908, y: 0.3235236, z: 0.7329062}
+  m_LocalPosition: {x: 1.2824908, y: 0.3235236, z: 0.7029062}
   m_LocalScale: {x: 0.2411178, y: 0.2411178, z: 0.24827927}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -663,13 +663,13 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4219613928459583780}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.45, z: 0}
   m_Radius: 1.25
   m_SuspensionSpring:
-    spring: 30000
-    damper: 1500
+    spring: 35000
+    damper: 2500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 1.25
   m_ForceAppPointDistance: 0
   m_Mass: 300
   m_WheelDampingRate: 1
@@ -704,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3831423060455031524}
   - component: {fileID: 5376735270769085397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,13 +735,13 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4536912344663418485}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.45, z: 0}
   m_Radius: 1.25
   m_SuspensionSpring:
-    spring: 70000
-    damper: 7000
-    targetPosition: 0.8
-  m_SuspensionDistance: 0.5
+    spring: 35000
+    damper: 2500
+    targetPosition: 0.5
+  m_SuspensionDistance: 1.25
   m_ForceAppPointDistance: 0
   m_Mass: 300
   m_WheelDampingRate: 1
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 1391505817970337520}
   - component: {fileID: 8930626214602486599}
   - component: {fileID: 2915335624853032150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: plastic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2161300400209081620}
   - component: {fileID: 1384580504644161992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,13 +890,13 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5517477790390794886}
   serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.45, z: 0}
   m_Radius: 1.25
   m_SuspensionSpring:
-    spring: 70000
-    damper: 7000
-    targetPosition: 0.8
-  m_SuspensionDistance: 0.5
+    spring: 35000
+    damper: 2500
+    targetPosition: 0.5
+  m_SuspensionDistance: 1.25
   m_ForceAppPointDistance: 0
   m_Mass: 300
   m_WheelDampingRate: 1
@@ -930,7 +930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8011423230082006278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheelTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 1947332061764996288}
   - component: {fileID: 3709485873356603752}
   - component: {fileID: 3273639849209383480}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 6770622426611783793}
   - component: {fileID: 8413905604475404985}
   - component: {fileID: 7304365052022121242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4482098571488871984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 5956659444600123473}
   - component: {fileID: 786129504440439444}
   - component: {fileID: 250925299230474300}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2837254160384115426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1282,7 @@ GameObject:
   - component: {fileID: 7359212498353568379}
   - component: {fileID: 8723435930019166376}
   - component: {fileID: 1874532942428632478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 993334489945762638}
   - component: {fileID: 771382439030027169}
   - component: {fileID: 942598632339264641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: brakes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 6120129872080284273}
   - component: {fileID: 2605352196083504645}
   - component: {fileID: 7969600473418027879}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: door_interior001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 4894033879454840321}
   - component: {fileID: 1263999974898149634}
   - component: {fileID: 2366381658149415025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wheel_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1613,7 +1613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4846656805901761612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
